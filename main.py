@@ -4,9 +4,8 @@ from typing import List
 
 app = FastAPI()
 
-# ---- Your details ----
-FULL_NAME = "john_doe"   # must be lowercase
-DOB = "17091999"         # ddmmyyyy
+FULL_NAME = "john_doe"   
+DOB = "17091999"        
 EMAIL = "john@xyz.com"
 ROLL = "ABCD123"
 
@@ -22,17 +21,17 @@ def process_data(request: DataRequest):
     concat_string = ""
 
     for el in request.data:
-        if el.isdigit():  # numeric string
+        if el.isdigit():  
             num = int(el)
             if num % 2 == 0:
                 even_numbers.append(el)
             else:
                 odd_numbers.append(el)
             total_sum += num
-        elif el.isalpha():  # alphabets
+        elif el.isalpha():  
             alphabets.append(el.upper())
             concat_string += el
-        else:  # special characters
+        else:
             special_chars.append(el)
 
 
